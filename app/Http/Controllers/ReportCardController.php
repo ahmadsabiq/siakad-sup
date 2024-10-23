@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class ReportCardController extends Controller
 {
     // Display manual input form for report cards
-    public function manualInput()
+    public function indexInputReport()
     {
         return view('dashboard.report-cards.manual-input.index');
     }

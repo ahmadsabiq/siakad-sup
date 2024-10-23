@@ -15,6 +15,16 @@ class DormitoryController extends Controller
         return view('dashboard.dormitory.room-allocation.index');
     }
 
+    // create room allocation
+    public function createRoomAllocation()
+    {
+        // $students = Student::all();
+        // $rooms = Room::all();
+        // return view('dashboard.dormitory.room-allocation.create', compact('students', 'rooms'));
+
+        return view('dashboard.dormitory.room-allocation.create');
+    }
+
     // Allocate rooms for students
     public function allocateRoom(Request $request)
     {
@@ -33,5 +43,11 @@ class DormitoryController extends Controller
         // return view('dashboard.dormitory.lesson-schedule.index', compact('schedules'));
 
         return view('dashboard.dormitory.lesson-schedule.index');
+    }
+
+    // Show form to add a new schedule
+    public function createLessonSchedule()
+    {
+        return view('dashboard.dormitory.lesson-schedule.create');
     }
 }

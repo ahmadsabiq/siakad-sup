@@ -8,10 +8,12 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StudentAffairsController;
 use App\Http\Controllers\SchoolController;
 use App\Http\Controllers\AcademicsController;
+use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\DormitoryController;
+use App\Http\Controllers\ReportCardController;
 
 
 Route::get('/', [AuthController::class, 'login'])->name('login');
@@ -57,7 +59,20 @@ Route::get('/attendance/teachers', [AttendanceController::class, 'indexTeacherAt
 Route::get('/attendance/staff', [AttendanceController::class, 'indexStaffAttendance'])->name('attendance.staff.index');
 Route::get('/attendance/notifications', [AttendanceController::class, 'showNotification'])->name('attendance.notifications.index');
 
+// Reports
+Route::get('/reports/input-report', [ReportCardController::class, 'indexInputReport'])->name('reports.input-report.index');
+Route::get('/reports', [ReportCardController::class, 'indexReportsCard'])->name('reports.index');
+Route::get('/reports/create', [ReportCardController::class, 'createReportCard'])->name('reports.create');
 
+// Announcement
+Route::get('/announcement', [AnnouncementController::class, 'indexAnnouncement'])->name('announcement.index');
+Route::get('/announcement/create', [AnnouncementController::class, 'createAnnouncement'])->name('announcement.create');
+
+// Dormitory
+Route::get('/dormitory/rooms', [DormitoryController::class, 'indexRoomAllocation'])->name('dormitory.rooms.index');
+Route::get('/dormitory/rooms/create', [DormitoryController::class, 'createRoomAllocation'])->name('dormitory.rooms.create');
+Route::get('/dormitory/lessons', [DormitoryController::class, 'indexLessonSchedule'])->name('dormitory.rooms.lessons.index');
+Route::get('/dormitory/lessons/create', [DormitoryController::class, 'createLessonSchedule'])->name('dormitory.rooms.lessons.create');
 
 // ----------------------- Bawaan Laravel Breeze -----------------------
 
