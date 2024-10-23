@@ -52,4 +52,10 @@ class SchoolController extends Controller
 
         return view('dashboard.school.staff-data.index');
     }
+
+    // Show form to add a new staff
+    public function createStaff()
+    {
+        return view('dashboard.school.staff-data.create');
+    }
 }

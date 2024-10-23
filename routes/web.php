@@ -4,27 +4,64 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\TeacherController;
-use App\Http\Controllers\ClassController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ScheduleController;
-use App\Http\Controllers\PaymentController;
-
-Route::get('/', [AuthController::class, 'index'])->name('login');
-// Route::post('/login', [AuthController::class, 'login']);
-// Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-
-Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::resource('students', StudentController::class);
-    Route::resource('teachers', TeacherController::class);
-    Route::resource('classes', ClassController::class);
-    Route::resource('schedules', ScheduleController::class);
-    Route::resource('payments', PaymentController::class);
-});
+use App\Http\Controllers\StudentAffairsController;
+use App\Http\Controllers\SchoolController;
+use App\Http\Controllers\AcademicsController;
+use App\Http\Controllers\FinanceController;
+use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\DormitoryController;
 
 
-// Bawaan Laravel Breeze
+Route::get('/', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'submitlogin']);
+Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
+Route::get('/logout', [AuthController::class, 'login'])->name('logout');
+
+// Route to register page
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+
+// Student Affairs
+Route::get('/student-affairs/students', [StudentAffairsController::class, 'indexStudents'])->name('student-affairs.students.index');
+Route::get('/student-affairs/registration', [StudentAffairsController::class, 'createStudent'])->name('student-affairs.students.create');
+Route::get('/student-affairs/register', [StudentAffairsController::class, 'indexRegistration'])->name('student-affairs.registration.index');
+Route::get('/student-affairs/parents', [StudentAffairsController::class, 'indexParents'])->name('student-affairs.parents.index');
+
+// School
+Route::get('/school/structure', [SchoolController::class, 'indexStructure'])->name('school.structure.index');
+Route::get('/school/teachers/create', [SchoolController::class, 'createTeacher'])->name('school.teachers.create');
+Route::get('/school/teachers', [SchoolController::class, 'indexTeachers'])->name('school.teachers.index');
+Route::get('/school/staff', [SchoolController::class, 'indexStaff'])->name('school.staff.index');
+Route::get('/school/staff/create', [SchoolController::class, 'createStaff'])->name('school.staff.create');
+
+// Academics
+Route::get('/academics/schedules', [AcademicsController::class, 'indexSchedules'])->name('academics.schedules.index');
+Route::get('/academics/schedules/create', [AcademicsController::class, 'createSchedule'])->name('academics.schedules.create');
+Route::get('/academics/classes', [AcademicsController::class, 'indexClasses'])->name('academics.classes.index');
+Route::get('/academics/classes/create', [AcademicsController::class, 'createClass'])->name('academics.classes.create');
+Route::get('/academics/curriculum', [AcademicsController::class, 'indexCurriculum'])->name('academics.curriculum.index');
+Route::get('/academics/curriculum/create', [AcademicsController::class, 'createCurriculum'])->name('academics.curriculum.create');
+Route::get('/academics/calendar', [AcademicsController::class, 'indexCalendar'])->name('academics.calendar.index');
+Route::get('/academics/calendar/create', [AcademicsController::class, 'createCalendar'])->name('academics.calendar.create');
+Route::get('/academics/Syllabus', [AcademicsController::class, 'indexSyllabus'])->name('academics.syllabus.index');
+Route::get('/academics/Syllabus/create', [AcademicsController::class, 'createSyllabus'])->name('academics.syllabus.create');
+
+// Finance
+Route::get('/finance/tuition-fees', [FinanceController::class, 'indexTuitionFees'])->name('finance.tuition-fees.index');
+Route::get('/finance/other-fees', [FinanceController::class, 'indexOtherFees'])->name('finance.other-fees.index');
+
+// Attendance
+Route::get('/attendance/students', [AttendanceController::class, 'indexStudentAttendance'])->name('attendance.students.index');
+Route::get('/attendance/teachers', [AttendanceController::class, 'indexTeacherAttendance'])->name('attendance.teachers.index');
+Route::get('/attendance/staff', [AttendanceController::class, 'indexStaffAttendance'])->name('attendance.staff.index');
+Route::get('/attendance/notifications', [AttendanceController::class, 'showNotification'])->name('attendance.notifications.index');
+
+
+
+// ----------------------- Bawaan Laravel Breeze -----------------------
+
+/*
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -36,3 +73,4 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+*/
