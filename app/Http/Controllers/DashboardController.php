@@ -10,4 +10,18 @@ class DashboardController extends Controller
     {
         return view('dashboard.index');
     }
+
+    // ------------------- Academics -------------------
+    // Display academics page
+    public function indexAcademics()
+    {
+        return view('dashboard.academics.academic-calendar.index');
+    }
+
+    // ------------------- Curriculum -------------------
+    // Display curriculum page
+    public function indexCurriculum()
+    {
+        return view('dashboard.academics.curriculum.index');
+    }
 }

@@ -27,25 +27,33 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 // Student Affairs
 Route::get('/student-affairs/students', [StudentAffairsController::class, 'indexStudents'])->name('student-affairs.students.index');
 Route::get('/student-affairs/registration', [StudentAffairsController::class, 'createStudent'])->name('student-affairs.students.create');
+
 Route::get('/student-affairs/register', [StudentAffairsController::class, 'indexRegistration'])->name('student-affairs.registration.index');
+
 Route::get('/student-affairs/parents', [StudentAffairsController::class, 'indexParents'])->name('student-affairs.parents.index');
 
 // School
 Route::get('/school/structure', [SchoolController::class, 'indexStructure'])->name('school.structure.index');
 Route::get('/school/teachers/create', [SchoolController::class, 'createTeacher'])->name('school.teachers.create');
+
 Route::get('/school/teachers', [SchoolController::class, 'indexTeachers'])->name('school.teachers.index');
+
 Route::get('/school/staff', [SchoolController::class, 'indexStaff'])->name('school.staff.index');
 Route::get('/school/staff/create', [SchoolController::class, 'createStaff'])->name('school.staff.create');
 
 // Academics
 Route::get('/academics/schedules', [AcademicsController::class, 'indexSchedules'])->name('academics.schedules.index');
 Route::get('/academics/schedules/create', [AcademicsController::class, 'createSchedule'])->name('academics.schedules.create');
+
 Route::get('/academics/classes', [AcademicsController::class, 'indexClasses'])->name('academics.classes.index');
 Route::get('/academics/classes/create', [AcademicsController::class, 'createClass'])->name('academics.classes.create');
+
 Route::get('/academics/curriculum', [AcademicsController::class, 'indexCurriculum'])->name('academics.curriculum.index');
 Route::get('/academics/curriculum/create', [AcademicsController::class, 'createCurriculum'])->name('academics.curriculum.create');
+
 Route::get('/academics/calendar', [AcademicsController::class, 'indexCalendar'])->name('academics.calendar.index');
 Route::get('/academics/calendar/create', [AcademicsController::class, 'createCalendar'])->name('academics.calendar.create');
+
 Route::get('/academics/Syllabus', [AcademicsController::class, 'indexSyllabus'])->name('academics.syllabus.index');
 Route::get('/academics/Syllabus/create', [AcademicsController::class, 'createSyllabus'])->name('academics.syllabus.create');
 
