@@ -55,6 +55,12 @@ class StudentAffairsController extends Controller
         return view('dashboard.student-affairs.parent-data.index');
     }
 
+    // Show form to add a new parent
+    public function createParent()
+    {
+        return view('dashboard.student-affairs.parent-data.create');
+    }
+
     /*
     // Show form to edit parent data
     public function editParent($id)

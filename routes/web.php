@@ -31,6 +31,7 @@ Route::get('/student-affairs/registration', [StudentAffairsController::class, 'c
 Route::get('/student-affairs/register', [StudentAffairsController::class, 'indexRegistration'])->name('student-affairs.registration.index');
 
 Route::get('/student-affairs/parents', [StudentAffairsController::class, 'indexParents'])->name('student-affairs.parents.index');
+Route::get('/student-affairs/parents/create', [StudentAffairsController::class, 'createParent'])->name('student-affairs.parents.create');
 
 // School
 Route::get('/school/structure', [SchoolController::class, 'indexStructure'])->name('school.structure.index');

@@ -15,16 +15,26 @@
 </head>
 
 <body>
-    <div class="d-flex">
-        @include('dashboard.layouts.sidebar')
-        <div class="content">
-            @include('dashboard.layouts.header')
-            <main class="p-4">
-                @yield('content')
-            </main>
+    <div class="container-fluid">
+        <div class="row">
+            <nav aria-label="Sidebar" class="col-auto bg-dark text-white p-3 sidebar">
+                @include('dashboard.layouts.sidebar')
+            </nav>
+
+            <div class="content">
+                @include('dashboard.layouts.header')
+                <main class="p-4" role="main">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @yield('content')
+                </main>
+            </div>
+
         </div>
     </div>
-
     <script src="{{ asset('js/app.js') }}"></script>
 
     <!-- Tambahkan Jquery -->
