@@ -2,13 +2,22 @@
 <aside class="sidebar bg-dark text-white p-3">
     <h2>SIAKAD SUP</h2>
     <ul class="nav flex-column">
+
+        <!-- Epic: Dashboard -->
+        <li class="nav-item">
+            <a href="{{ route('dashboard') }}" class="nav-link text-white">
+                <i class="fa fa-tachometer-alt"></i> Dashboard
+            </a>
+        </li>
+
         <!-- Epic: Kesiswaan -->
         <li class="nav-item">
             <a href="#kesiswaanMenu" class="nav-link text-white dropdown-toggle" data-bs-toggle="collapse">
                 <i class="fa fa-user"></i> Kesiswaan
             </a>
             <ul class="collapse list-unstyled" id="kesiswaanMenu">
-                <li><a href="{{ route('student-affairs.registration.index') }}" class="nav-link">Student Registration</a>
+                <li><a href="{{ route('student-affairs.registration.index') }}" class="nav-link">Student
+                        Registration</a>
                 </li>
                 <li><a href="{{ route('student-affairs.students.index') }}" class="nav-link">Student Data</a></li>
                 <li><a href="{{ route('student-affairs.parents.index') }}" class="nav-link">Parent Data</a></li>

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class AnnouncementController extends Controller
 {
     // Display list of announcements
-    public function index()
+    public function indexAnnouncement()
     {
         // $announcements = Announcement::all();
         // return view('dashboard.announcements.index', compact('announcements'));
@@ -15,7 +15,7 @@ class AnnouncementController extends Controller
     }
 
     // Show form to create new announcement
-    public function create()
+    public function createAnnouncement()
     {
         return view('dashboard.announcements.create');
     }

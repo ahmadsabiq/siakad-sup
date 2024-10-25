@@ -15,6 +15,12 @@ class SchoolController extends Controller
         return view('dashboard.school.structure.index');
     }
 
+    // create structure of school
+    public function createStructure()
+    {
+        return view('dashboard.school.structure.create');
+    }
+
     // ------------------- Teacher Data -------------------
     // Display list of teachers
     public function indexTeachers()

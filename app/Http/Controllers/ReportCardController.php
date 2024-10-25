@@ -13,7 +13,7 @@ class ReportCardController extends Controller
     }
 
     // Display report card for a student
-    public function indexReportCard($student_id)
+    public function indexReportCard()
     {
         // $reportCard = ReportCard::where('student_id', $student_id)->get();
         // return view('report-cards.index', compact('reportCard'));

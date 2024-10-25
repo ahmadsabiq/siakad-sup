@@ -34,9 +34,10 @@ Route::get('/student-affairs/parents', [StudentAffairsController::class, 'indexP
 
 // School
 Route::get('/school/structure', [SchoolController::class, 'indexStructure'])->name('school.structure.index');
-Route::get('/school/teachers/create', [SchoolController::class, 'createTeacher'])->name('school.teachers.create');
+Route::get('/school/structure/create', [SchoolController::class, 'createStructure'])->name('school.structure.create');
 
 Route::get('/school/teachers', [SchoolController::class, 'indexTeachers'])->name('school.teachers.index');
+Route::get('/school/teachers/create', [SchoolController::class, 'createTeacher'])->name('school.teachers.create');
 
 Route::get('/school/staff', [SchoolController::class, 'indexStaff'])->name('school.staff.index');
 Route::get('/school/staff/create', [SchoolController::class, 'createStaff'])->name('school.staff.create');
@@ -69,7 +70,7 @@ Route::get('/attendance/notifications', [AttendanceController::class, 'showNotif
 
 // Reports
 Route::get('/reports/input-report', [ReportCardController::class, 'indexInputReport'])->name('reports.input-report.index');
-Route::get('/reports', [ReportCardController::class, 'indexReportsCard'])->name('reports.index');
+Route::get('/reports', [ReportCardController::class, 'indexReportCard'])->name('reports.index');
 Route::get('/reports/create', [ReportCardController::class, 'createReportCard'])->name('reports.create');
 
 // Announcement
